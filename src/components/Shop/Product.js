@@ -1,8 +1,11 @@
 import React from 'react'
+import {  useParams } from 'react-router-dom'
 import Footer from '../Shared/Footer/Footer'
 import Navbar from '../Shared/Navbar/Navbar'
 
 const Product = () => {
+  const {id} = useParams()
+  console.log(id)
   const products = [
     {
       id: 1,
@@ -45,8 +48,8 @@ const Product = () => {
         'Hand holding black machined steel mechanical pencil with brass tip and top.',
     },
   ]
-  const productId = 4
-  const filteredProduct = products.filter(product => product.id === productId)
+  const productId = id;
+  const filteredProduct = products.filter(product => product.id == productId)
   return (
     <>
       <Navbar />
